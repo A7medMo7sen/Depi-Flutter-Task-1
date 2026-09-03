@@ -270,15 +270,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(height: 20),
                       ElevatedButton.icon(
-                        onPressed: () {
-                          if (quantity != 0) {
-                            setState(() {
-                              if (formKey.currentState!.validate()) {
-                                addOrder();
-                              }
-                            });
-                          }
-                        },
+                        onPressed: quantity == 0
+                            ? null
+                            : () {
+                                setState(() {
+                                  if (formKey.currentState!.validate()) {
+                                    addOrder();
+                                  }
+                                });
+                              },
                         label: const Text(
                           'Place Order',
                           style: TextStyle(
@@ -295,9 +295,8 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadiusGeometry.circular(50),
                           ),
                           minimumSize: Size(double.infinity, 50),
-                          backgroundColor: quantity == 0
-                              ? Color.fromRGBO(1, 1, 1, 0.5254901960784314)
-                              : Color.fromRGBO(62, 39, 35, 1),
+                          backgroundColor: const Color.fromRGBO(62, 39, 35, 1),
+                          disabledBackgroundColor: const Color.fromRGBO(1, 1, 1, 0.5254901960784314)
                         ),
                       ),
                       Align(
