@@ -86,6 +86,14 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(50, 44, 41, 0.9),
                             borderRadius: BorderRadius.circular(50),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black,
+                                blurRadius: 2,
+                                offset: Offset(0, 2),
+                                spreadRadius: -2,
+                              ),
+                            ],
                           ),
                           child: Row(
                             children: [
@@ -168,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                       Form(
                         key: formKey,
                         child: TextFormField(
-                          enabled: quantity!=0,
+                          enabled: quantity != 0,
                           controller: controller,
                           maxLines: 3,
                           decoration: InputDecoration(
@@ -297,7 +305,12 @@ class _HomePageState extends State<HomePage> {
                           ),
                           minimumSize: Size(double.infinity, 50),
                           backgroundColor: const Color.fromRGBO(62, 39, 35, 1),
-                          disabledBackgroundColor: const Color.fromRGBO(1, 1, 1, 0.5254901960784314)
+                          disabledBackgroundColor: const Color.fromRGBO(
+                            1,
+                            1,
+                            1,
+                            0.5254901960784314,
+                          ),
                         ),
                       ),
                       Align(
