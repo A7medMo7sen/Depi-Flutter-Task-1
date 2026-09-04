@@ -168,6 +168,7 @@ class _HomePageState extends State<HomePage> {
                       Form(
                         key: formKey,
                         child: TextFormField(
+                          enabled: quantity!=0,
                           controller: controller,
                           maxLines: 3,
                           decoration: InputDecoration(
