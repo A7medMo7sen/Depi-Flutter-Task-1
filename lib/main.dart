@@ -47,22 +47,22 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          leading: Icon(Icons.menu),
-          title: Center(
-            child: const Text(
-              'Order Coffee',
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        leading: Icon(Icons.menu),
+        title: Center(
+          child: const Text(
+            'Order Coffee',
+            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
           ),
-          actions: [
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
-          ],
         ),
-        body: ListView(
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
+        ],
+      ),
+      body: SafeArea(
+        child: ListView(
           children: [
             Column(
               children: [
@@ -315,7 +315,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Align(
                         alignment: AlignmentGeometry.bottomRight,
-
+            
                         child: Stack(
                           alignment: AlignmentGeometry.topEnd,
                           children: [
@@ -364,31 +364,31 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(
-            color: const Color.fromRGBO(239, 237, 236, 1),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(48)),
-          ),
-          height: 60,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.home)),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Color.fromRGBO(160, 243, 153, 1),
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.document_scanner_outlined),
-                ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: const Color.fromRGBO(239, 237, 236, 1),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(48)),
+        ),
+        height: 60,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.home)),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color.fromRGBO(160, 243, 153, 1),
               ),
-              IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.person_2_outlined)),
-            ],
-          ),
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.document_scanner_outlined),
+              ),
+            ),
+            IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.person_2_outlined)),
+          ],
         ),
       ),
     );
